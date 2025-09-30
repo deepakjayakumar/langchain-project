@@ -39,8 +39,8 @@ Upon completion of his school education, Rajinikanth performed several jobs incl
         input_variables=["information"], template=summary_template
     )
 
-    #llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
-    llm = ChatOllama(temperature =0, model="gemma3:270m")
+    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
+    #llm = ChatOllama(temperature =0, model="gemma3:270m")
     chain = summary_prompt_template | llm
     response = chain.invoke(input={"information":information})
     print(response.content)
